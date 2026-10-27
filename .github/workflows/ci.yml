@@ -1,0 +1,19 @@
+name: Hello DevOps CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the Source Code
+        uses: actions/checkout@v4
+
+      - name: Check the HTML File
+        run: test -f index.html
+
+
